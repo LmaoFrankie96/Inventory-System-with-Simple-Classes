@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_Inventory : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class UI_Inventory : MonoBehaviour
     private List<Item> inventoryItemList;
     [SerializeField] private Transform _itemSlotContainer;
     [SerializeField] private Transform _itemSlotTemplate;
+    [SerializeField] private Image _itemImage;
     //  [SerializeField] private RectTransform _slotContainerRectTransform;
 
     private void Awake()
@@ -34,6 +36,7 @@ public class UI_Inventory : MonoBehaviour
             RectTransform itemSlotRectTransform = (RectTransform)Instantiate(_itemSlotTemplate, _itemSlotContainer);
             itemSlotRectTransform.gameObject.SetActive(true);
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
+            _itemImage.sprite=item.GetSprite();
             x++;
             if (x > 4)
             {

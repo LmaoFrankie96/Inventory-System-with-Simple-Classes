@@ -546,6 +546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemSlotContainer: {fileID: 684320309}
   _itemSlotTemplate: {fileID: 1873225737}
+  _itemImage: {fileID: 1635978210}
 --- !u!1 &1253882059
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,7 +673,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b56f1f5c56f267346abfe9108737a37c, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -783,7 +784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1873225737
 RectTransform:
   m_ObjectHideFlags: 0
@@ -843,3 +844,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873225736}
   m_CullTransparentMesh: 1
+--- !u!1 &1884323776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1884323778}
+  - component: {fileID: 1884323777}
+  m_Layer: 0
+  m_Name: ItemAssets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1884323777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884323776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c7accafec555ab4c82026c6516a44d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordSprite: {fileID: 21300000, guid: 012e44568661cf4439978aaea3619440, type: 3}
+  healthPotionSprite: {fileID: 21300000, guid: b56f1f5c56f267346abfe9108737a37c, type: 3}
+  manaPotionSprite: {fileID: 21300000, guid: 5dd2ab972d9f95e46be6c852c21ca55d, type: 3}
+  coinSprite: {fileID: 21300000, guid: 09f89eb7ddec3a24099be166bb4bb441, type: 3}
+  medkitSprite: {fileID: 21300000, guid: a992316fbdffa9148af423651b45c5ef, type: 3}
+--- !u!4 &1884323778
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884323776}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 879.51337, y: 521.5966, z: -4.203967}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
