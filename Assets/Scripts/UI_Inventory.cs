@@ -16,18 +16,18 @@ public class UI_Inventory : MonoBehaviour
     }
     public void SetInventory(Inventory inventory)
     {
-        Debug.Log("I am in SetInventory function");
+        //Debug.Log("I am in SetInventory function");
         this.inventory = inventory;
         inventoryItemList = inventory.GetItemList();
         RefreshInventoryItems();
     }
     private void RefreshInventoryItems()
     {
-        Debug.Log("I am in RefreshInventoryItems function");
+        //Debug.Log("I am in RefreshInventoryItems function");
         int x = 0;
         int y = 0;
-        float itemSlotCellSize = 30f;
-        Debug.Log($"Inventory list count is: {inventoryItemList.Count}");
+        float itemSlotCellSize = 200f;
+        //Debug.Log($"Inventory list count is: {inventoryItemList.Count}");
         foreach (Item item in inventoryItemList)
         {
             //RectTransform itemSlotRectTransform=Instantiate(_itemSlotTemplate,_itemSlotContainer).GetComponent<RectTransform>();

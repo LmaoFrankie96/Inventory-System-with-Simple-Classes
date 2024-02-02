@@ -6,12 +6,12 @@ public class Player : MonoBehaviour
 {
     private Inventory _inventory;
     [SerializeField] private UI_Inventory _uiInventory;
-    private void Start()
+    private void Awake()
     {
-        Debug.Log("I am running 1");
+        //Debug.Log("I am running 1");
         _inventory = new Inventory();
-        Debug.Log("I am running 2");
+       // Debug.Log("I am running 2");
         _uiInventory.SetInventory(_inventory);
-        Debug.Log("I am running 3");
+        //Debug.Log("I am running 3");
     }
 }
