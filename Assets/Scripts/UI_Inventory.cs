@@ -33,10 +33,10 @@ public class UI_Inventory : MonoBehaviour
         foreach (Item item in inventoryItemList)
         {
             //RectTransform itemSlotRectTransform=Instantiate(_itemSlotTemplate,_itemSlotContainer).GetComponent<RectTransform>();
+            _itemImage.sprite=item.GetSprite();
             RectTransform itemSlotRectTransform = (RectTransform)Instantiate(_itemSlotTemplate, _itemSlotContainer);
             itemSlotRectTransform.gameObject.SetActive(true);
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
-            _itemImage.sprite=item.GetSprite();
             x++;
             if (x > 4)
             {
