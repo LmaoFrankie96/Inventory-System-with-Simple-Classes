@@ -8,10 +8,10 @@ public class Player : MonoBehaviour
     [SerializeField] private UI_Inventory _uiInventory;
     private void Awake()
     {
+        //Debug.Log("I am running 1");
         _inventory = new Inventory();
+       // Debug.Log("I am running 2");
         _uiInventory.SetInventory(_inventory);
-
-        ItemWorld.SpawnItemWorld(new Vector3(20, 20), new Item { itemType = Item.ItemType.ManaPotion, amount = 1 });
-        ItemWorld.SpawnItemWorld(new Vector3(-20, 20), new Item { itemType = Item.ItemType.Sword, amount = 1 });
+        //Debug.Log("I am running 3");
     }
 }
