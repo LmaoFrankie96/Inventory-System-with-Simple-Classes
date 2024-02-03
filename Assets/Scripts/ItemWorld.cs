@@ -1,27 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemWorld : MonoBehaviour
 {
     private Item item;
-    private SpriteRenderer spriteRenderer;
+    //private SpriteRenderer spriteRenderer;
+    private Image img;
+    [SerializeField] private Transform itemContainer;
+    public void SpawnItemWorld(Vector2 position, Item item)
+    {
 
-    public static ItemWorld SpawnItemWorld(Vector3 position, Item item) {
-
-        Transform transform = Instantiate(ItemAssets.Instance.prefabItemWorld, position, Quaternion.identity);
+        RectTransform transform = (RectTransform)Instantiate(ItemAssets.Instance.prefabItemWorld, itemContainer);
+        transform.anchoredPosition = position;
         ItemWorld itemWorld = transform.GetComponent<ItemWorld>();
         itemWorld.SetItem(item);
-        return itemWorld;
+        //return itemWorld;
     }
     private void Awake()
     {
-        spriteRenderer= GetComponent<SpriteRenderer>();
+        //  spriteRenderer= GetComponent<SpriteRenderer>();
+        img = GetComponent<Image>();
     }
-    public void SetItem(Item item) { 
-    
+    public void SetItem(Item item)
+    {
+
         this.item = item;
-        spriteRenderer.sprite = item.GetSprite();
+        //spriteRenderer.sprite = item.GetSprite();
+        img.sprite = item.GetSprite();
     }
-    
+
 }
