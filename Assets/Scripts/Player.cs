@@ -11,8 +11,18 @@ public class Player : MonoBehaviour
     {
         _inventory = new Inventory();
         _uiInventory.SetInventory(_inventory);
+        //Debug.Log(_inventory.itemList.Count);
+        _itemWorld.SpawnItemWorld(new Vector2(0, 100), new Item { itemType = Item.ItemType.ManaPotion, amount = 1 });
+        _itemWorld.SpawnItemWorld(new Vector2(0, 200), new Item { itemType = Item.ItemType.Sword, amount = 1 });
+    }
+    public void AddItemToInventory() {
 
-        _itemWorld.SpawnItemWorld(new Vector2(0, 0), new Item { itemType = Item.ItemType.ManaPotion, amount = 1 });
-        _itemWorld.SpawnItemWorld(new Vector2(0, 20), new Item { itemType = Item.ItemType.Sword, amount = 1 });
+        if (_itemWorld != null) {
+
+            _inventory.AddItem(_itemWorld.GetItem());
+            //Debug.Log(_inventory.itemList.Count);
+            _uiInventory.SetInventory(_inventory);
+            _itemWorld.DestroySelf();
+        }
     }
 }

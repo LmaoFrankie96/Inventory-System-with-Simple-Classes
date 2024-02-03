@@ -21,7 +21,7 @@ public class ItemWorld : MonoBehaviour
     private void Awake()
     {
         //  spriteRenderer= GetComponent<SpriteRenderer>();
-        img = GetComponent<Image>();
+        img = GetComponentInChildren<Image>();
     }
     public void SetItem(Item item)
     {
@@ -30,5 +30,14 @@ public class ItemWorld : MonoBehaviour
         //spriteRenderer.sprite = item.GetSprite();
         img.sprite = item.GetSprite();
     }
+    
+    
+    public Item GetItem() {
 
+        return item;
+    }
+    public void DestroySelf() {
+
+        Destroy(gameObject);
+    }
 }
