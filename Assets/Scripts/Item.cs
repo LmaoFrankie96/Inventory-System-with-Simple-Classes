@@ -14,7 +14,7 @@ public class Item
     }
     public ItemType itemType;
     public int amount;
-
+    public int itemKey;
     public Sprite GetSprite() {
 
         switch (itemType) { 
