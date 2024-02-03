@@ -21,8 +21,14 @@ public class Player : MonoBehaviour
             Debug.Log("Add item to inventory on click is being called");
             _inventory.AddItem(_itemWorld.GetItem());
             //Debug.Log(_inventory.itemList.Count);
-            _uiInventory.SetInventory(_inventory);
+            //_uiInventory.SetInventory(_inventory);
            // _itemWorld.DestroySelf();
         //}
+    }
+    public void RemoveItemFromInventory()
+    {
+        Debug.Log("Remove item from inventory on click is being called");
+        _inventory.RemoveItem(_itemWorld.GetItem());
+
     }
 }
