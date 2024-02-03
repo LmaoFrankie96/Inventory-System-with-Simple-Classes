@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     private Inventory _inventory;
     [SerializeField] private UI_Inventory _uiInventory;
-    private void Awake()
+    private void Start()
     {
         _inventory = new Inventory();
         _uiInventory.SetInventory(_inventory);
