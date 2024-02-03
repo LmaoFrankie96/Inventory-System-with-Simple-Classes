@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     public void RemoveItemFromInventory()
     {
         Debug.Log("Remove item from inventory on click is being called");
-        _inventory.RemoveItem(_itemWorld.GetItem());
+        _inventory.RemoveItem(_inventory.itemList[_inventory.itemList.Count-1]);
 
     }
 }
