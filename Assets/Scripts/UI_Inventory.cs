@@ -49,15 +49,15 @@ public class UI_Inventory : MonoBehaviour
             //RectTransform itemSlotRectTransform=Instantiate(_itemSlotTemplate,_itemSlotContainer).GetComponent<RectTransform>();
             Debug.Log($"I am item number: {inventoryItemList.IndexOf(item)}");
             //Debug.Log($"I am item number: {inventoryItemList[inventoryItemList.IndexOf(item)].GetSprite().name}");
+           // _itemImage.sprite=item.GetSprite();
             RectTransform itemSlotRectTransform = (RectTransform)Instantiate(_itemSlotTemplate, _itemSlotContainer);
             itemSlotRectTransform.gameObject.SetActive(true);
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
-            //_itemImage.sprite=item.GetSprite();
             x++;
-            if (x > 4)
+            if (x > 3)
             {
                 x = 0;
-                y++;
+                y--;
             }
         }
 

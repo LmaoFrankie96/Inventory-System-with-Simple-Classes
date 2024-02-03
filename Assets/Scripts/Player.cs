@@ -16,13 +16,13 @@ public class Player : MonoBehaviour
         _itemWorld.SpawnItemWorld(new Vector2(0, 200), new Item { itemType = Item.ItemType.Sword, amount = 1 });
     }
     public void AddItemToInventory() {
-
-        if (_itemWorld != null) {
-
+        
+        //if (_itemWorld != null) {
+            Debug.Log("Add item to inventory on click is being called");
             _inventory.AddItem(_itemWorld.GetItem());
             //Debug.Log(_inventory.itemList.Count);
             _uiInventory.SetInventory(_inventory);
-            _itemWorld.DestroySelf();
-        }
+           // _itemWorld.DestroySelf();
+        //}
     }
 }
