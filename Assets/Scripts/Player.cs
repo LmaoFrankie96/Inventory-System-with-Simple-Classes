@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     //[SerializeField] private ItemWorld _itemWorld;
     public GameObject[] itemButtons;
     public int itemFlag;
+    public GameObject inventoryFullPopUp;
     private void Start()
     {
         _inventory = new Inventory();
@@ -20,29 +21,37 @@ public class Player : MonoBehaviour
     }
     public void AddItemToInventory()
     {
-        if (itemFlag == 0)
+        if (_inventory.itemList.Count < 16)
         {
+            if (itemFlag == 0)
+            {
 
-            _inventory.AddItem(new Item(ItemType.HealthPotion, 1, _inventory.itemList.Count));
-            Debug.Log(_inventory.itemList[_inventory.itemList.Count - 1].itemType);
+                _inventory.AddItem(new Item(ItemType.HealthPotion, 1, _inventory.itemList.Count));
+                Debug.Log(_inventory.itemList[_inventory.itemList.Count - 1].itemType);
+            }
+            else if (itemFlag == 1)
+            {
+                _inventory.AddItem(new Item(ItemType.Sword, 1, _inventory.itemList.Count));
+                Debug.Log(_inventory.itemList[_inventory.itemList.Count - 1].itemType);
+
+            }
+            else if (itemFlag == 2)
+            {
+                _inventory.AddItem(new Item(ItemType.Coin, 1, _inventory.itemList.Count));
+                Debug.Log(_inventory.itemList[_inventory.itemList.Count - 1].itemType);
+
+            }
+            else if (itemFlag == 3)
+            {
+                _inventory.AddItem(new Item(ItemType.Medkit, 1, _inventory.itemList.Count));
+                Debug.Log(_inventory.itemList[_inventory.itemList.Count - 1].itemType);
+
+            }
+            Debug.Log($"Inventory count is: {_inventory.itemList.Count}");
         }
-        else if (itemFlag == 1)
-        {
-            _inventory.AddItem(new Item(ItemType.Sword, 1, _inventory.itemList.Count));
-            Debug.Log(_inventory.itemList[_inventory.itemList.Count - 1].itemType);
-
-        }
-        else if (itemFlag == 2)
-        {
-            _inventory.AddItem(new Item(ItemType.Coin, 1, _inventory.itemList.Count));
-            Debug.Log(_inventory.itemList[_inventory.itemList.Count - 1].itemType);
-
-        }
-        else if (itemFlag == 3)
-        {
-            _inventory.AddItem(new Item(ItemType.Medkit, 1, _inventory.itemList.Count));
-            Debug.Log(_inventory.itemList[_inventory.itemList.Count - 1].itemType);
-
+        else {
+            inventoryFullPopUp.SetActive(true);
+            Debug.Log("Inventory is full");
         }
 
     }
