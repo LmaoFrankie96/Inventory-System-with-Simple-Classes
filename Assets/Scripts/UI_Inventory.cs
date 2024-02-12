@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UI_Inventory : MonoBehaviour
 {
     private Inventory _inventory;
-    private List<Item> inventoryItemList;
+    //private List<Item> inventoryItemList;
     [SerializeField] private Transform _itemSlotContainer;
     [SerializeField] private Transform _itemSlotTemplate;
     [SerializeField] private Image _itemImage;
@@ -21,7 +21,7 @@ public class UI_Inventory : MonoBehaviour
     {
         //Debug.Log("I am in SetInventory function");
         this._inventory = inventory;
-        inventoryItemList = _inventory.GetItemList();
+        //inventoryItemList = _inventory.GetItemList();
         _inventory.OnItemListChanged += Inventory_OnItemListChanged;
         RefreshInventoryItems();
     }
@@ -44,12 +44,12 @@ public class UI_Inventory : MonoBehaviour
         int y = 0;
         float itemSlotCellSize = 200f;
         //Debug.Log($"Inventory list count is: {inventoryItemList.Count}");
-        foreach (Item item in inventoryItemList)
+        foreach (Item item in _inventory.itemList)
         {
             //RectTransform itemSlotRectTransform=Instantiate(_itemSlotTemplate,_itemSlotContainer).GetComponent<RectTransform>();
             //Debug.Log($"I am item number: {inventoryItemList.IndexOf(item)}");
             //Debug.Log($"I am item number: {inventoryItemList[inventoryItemList.IndexOf(item)].GetSprite().name}");
-           // _itemImage.sprite=item.GetSprite();
+            _itemImage.sprite=item.GetSprite();
             RectTransform itemSlotRectTransform = (RectTransform)Instantiate(_itemSlotTemplate, _itemSlotContainer);
             itemSlotRectTransform.gameObject.SetActive(true);
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
