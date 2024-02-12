@@ -15,11 +15,13 @@ public class Item
     public ItemType itemType;
     public int amount;
     public int itemKey;
-    public Sprite GetSprite() {
+    public Sprite GetSprite()
+    {
 
-        switch (itemType) { 
-        
-            default: 
+        switch (itemType)
+        {
+
+            default:
             case ItemType.Sword: return ItemAssets.Instance.swordSprite;
             case ItemType.HealthPotion: return ItemAssets.Instance.healthPotionSprite;
             case ItemType.ManaPotion: return ItemAssets.Instance.manaPotionSprite;
@@ -27,4 +29,9 @@ public class Item
             case ItemType.Medkit: return ItemAssets.Instance.medkitSprite;
         }
     }
+    /*public Item GetItem()
+    {
+        return this;
+
+    }*/
 }
