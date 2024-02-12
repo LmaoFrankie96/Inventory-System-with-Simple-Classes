@@ -29,9 +29,11 @@ public class Item
             case ItemType.Medkit: return ItemAssets.Instance.medkitSprite;
         }
     }
-    /*public Item GetItem()
+    public Item (ItemType MitemType, int Mamount, int MitemKey)
     {
-        return this;
+        itemType = MitemType;
+        amount = Mamount;
+        itemKey = MitemKey;
 
-    }*/
+    }
 }
