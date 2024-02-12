@@ -20,22 +20,25 @@ public class Player : MonoBehaviour
     public void AddItemToInventory() {
         if (itemFlag == 0) {
 
-            _inventory.AddItem(new Item(Item.ItemType.HealthPotion,1,_inventory.itemList.Count-1));
-           // Debug.Log(_inventory.itemList[_inventory.itemList.Count - 1].itemType);
+            _inventory.AddItem(new Item(Item.ItemType.HealthPotion,1,_inventory.itemList.Count));
+           Debug.Log(_inventory.itemList[_inventory.itemList.Count - 1].itemKey);
         }
         else if (itemFlag == 1)
         {
-            _inventory.AddItem(new Item(Item.ItemType.Sword, 1, _inventory.itemList.Count - 1));
+            _inventory.AddItem(new Item(Item.ItemType.Sword, 1, _inventory.itemList.Count));
+            Debug.Log(_inventory.itemList[_inventory.itemList.Count - 1].itemKey);
 
         }
         else if (itemFlag == 2)
         {
-            _inventory.AddItem(new Item(Item.ItemType.Coin, 1, _inventory.itemList.Count - 1));
+            _inventory.AddItem(new Item(Item.ItemType.Coin, 1, _inventory.itemList.Count));
+            Debug.Log(_inventory.itemList[_inventory.itemList.Count - 1].itemKey);
 
         }
         else if (itemFlag == 3)
         {
-            _inventory.AddItem(new Item(Item.ItemType.Medkit, 1, _inventory.itemList.Count - 1));
+            _inventory.AddItem(new Item(Item.ItemType.Medkit, 1, _inventory.itemList.Count));
+            Debug.Log(_inventory.itemList[_inventory.itemList.Count - 1].itemKey);
 
         }
        

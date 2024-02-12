@@ -47,7 +47,7 @@ public class UI_Inventory : MonoBehaviour
         foreach (Item item in inventoryItemList)
         {
             //RectTransform itemSlotRectTransform=Instantiate(_itemSlotTemplate,_itemSlotContainer).GetComponent<RectTransform>();
-            Debug.Log($"I am item number: {inventoryItemList.IndexOf(item)}");
+            //Debug.Log($"I am item number: {inventoryItemList.IndexOf(item)}");
             //Debug.Log($"I am item number: {inventoryItemList[inventoryItemList.IndexOf(item)].GetSprite().name}");
            // _itemImage.sprite=item.GetSprite();
             RectTransform itemSlotRectTransform = (RectTransform)Instantiate(_itemSlotTemplate, _itemSlotContainer);
